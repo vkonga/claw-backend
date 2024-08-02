@@ -1,0 +1,48 @@
+### Register User
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+  "id": "1",
+  "username": "user1",
+  "password": "password123",
+  "role": "user"
+}
+
+### Login User
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "username": "user1",
+  "password": "password123"
+}
+
+### Create To-Do
+POST http://localhost:5000/todos
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJyb2xlIjoidXNlciIsImlhdCI6MTcyMjU5OTU2OH0.q26dNrwi060-xajK9vBatCh5TmqcC6NStwxW-nCeVP0
+
+{
+  "id": "1",
+  "task": "Buy groceries",
+  "isCompleted": false
+}
+
+### Get All To-Dos
+GET http://localhost:5000/todos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJyb2xlIjoidXNlciIsImlhdCI6MTcyMjU5OTU2OH0.q26dNrwi060-xajK9vBatCh5TmqcC6NStwxW-nCeVP0
+
+### Update To-Do
+PUT http://localhost:5000/todos/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJyb2xlIjoidXNlciIsImlhdCI6MTcyMjU5OTU2OH0.q26dNrwi060-xajK9vBatCh5TmqcC6NStwxW-nCeVP0
+
+{
+  "task": "Buy groceries and cook dinner",
+  "isCompleted": true
+}
+
+### Delete To-Do
+DELETE http://localhost:5000/todos/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJyb2xlIjoidXNlciIsImlhdCI6MTcyMjU5OTU2OH0.q26dNrwi060-xajK9vBatCh5TmqcC6NStwxW-nCeVP0
